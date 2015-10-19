@@ -72,8 +72,8 @@
             div.tooltip {   
               position: absolute;           
               text-align: center;           
-              width: 95px;                  
-              height: 33px;                 
+              width: 100px;                  
+              height: 45px;                 
               padding: 2px;             
               font-size: 8px;        
               background: lightsteelblue;   
@@ -121,7 +121,7 @@
   <!-- Article Content
   ================================================================== -->
   <div class="article-content">
-    
+        <h5>A quick look at Arsenal's chequered history</h5>
         <div id="chart"></div>
     
   </div>
@@ -185,7 +185,8 @@
 
             function mousemove(d){
                 div
-                .html("Date: " + d["match_date"] + "<br/>"  + "Home: " + d.home
+                .html("Date: " + d["match_date"] + "<br/>"  + "Vs: " + d.opponent
+                     + "<br/>" + "Venue: " + d.venue
                      + "<br/>" + "Score: " + d.fulltime)
                 .style("left", (d3.event.pageX ) + "px")
                 .style("top", (d3.event.pageY) + "px");
