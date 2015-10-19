@@ -22,7 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="google-site-verification" content="AgIAQN_qsniIQWOq659Bnhzx-LZts2FdgP1kLgtQg-k" />
 
-  <title>Heatmap of all Arsenal games</title>
+  <title>Heatmap of all the Arsenal league games</title>
 
   <meta name="description" content="">
   <meta name="author" content="SentimenalArse">
@@ -50,6 +50,9 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+  <!-- Pelican Dynamic - for embedding D3 charts
+  =================================================== -->
+  <link rel="stylesheet" href="/css/hist_style.css" type="text/css" />
 
 	<!-- Favicons
 	================================================== -->
@@ -57,31 +60,6 @@
 	<link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-        <style>
-            rect.selection {
-                stroke          : #333;
-                stroke-dasharray: 4px;
-                stroke-opacity  : 0.5;
-                fill            : transparent;
-            }
-            box:hover {
-              fill: orangered ;
-            }
-            
-            div.tooltip {   
-              position: absolute;           
-              text-align: center;           
-              width: 100px;                  
-              height: 45px;                 
-              padding: 2px;             
-              font-size: 8px;        
-              background: lightsteelblue;   
-              border: 0px;      
-              border-radius: 8px;           
-              pointer-events: none;         
-            }
-        </style>
 
 </head>
 <body>
@@ -111,19 +89,16 @@
 
   <!-- Article Headers
   ================================================================== -->
-  <h1 class="article-title"><a href="/heatmap-of-all-arsenal-games.html" title="Permalink to Heatmap of all Arsenal games">Heatmap of all Arsenal games</a></h1>
+  <h1 class="article-title"><a href="/heatmap-of-all-the-arsenal-league-games.html" title="Permalink to Heatmap of all the Arsenal league games">Heatmap of all the Arsenal league games</a></h1>
   <h5 class="article-date">October 19, 2015
- | Tags:         <a class="tag" href="/tag/visualization.html" rel="tag" title="Posts tagged with ">Visualization</a>
-        <a class="tag" href="/tag/heatmap.html" rel="tag" title="Posts tagged with ">heatmap</a>
   </h5>
   <hr class="small"></hr>
 
   <!-- Article Content
   ================================================================== -->
   <div class="article-content">
-        <h5>A look at Arsenal's chequered history</h5>
-        <div id="chart"></div>
-    
+    <h5>A look at Arsenal's chequered history</h5>
+<p><div id="chart"></div></p>
   </div>
 
   <div class="article-sharing">
@@ -137,74 +112,6 @@
     </div>
     <hr class="small"></hr>
   </div>
-    <script>
-        var dataFile = "arsenal_result";
-        var margin = { top: 25, right: 0, bottom: 50, left: 15 },
-          width = 480 - margin.left - margin.right,
-          height = 800 - margin.top - margin.bottom,
-          boxWidth = 8,
-          boxHeight = 8,
-          gridSize = 60,
-          rows = 50,
-          strokeColor = "#E6E6E6",
-          strokeWidth = 1,
-          colors = ["#449458", "#edebe8", "#f17f51"];
-        
-        var svg = d3.select("#chart").append("svg")
-          .attr("width", width + margin.left + margin.right)
-          .attr("height", height + margin.top + margin.bottom)
-          .append("g");
-        
-        
-        
-        d3.csv(dataFile, function(csvData) {
-            var data = csvData;
-            svg.selectAll(".box")
-              .data(data)
-              .enter()
-              .append('rect')
-              .attr('class', 'box')
-              .attr('x', function(d, i) { return (i % gridSize) * boxWidth; })
-              .attr('y', function(d, i) { return Math.floor(i/gridSize) * boxHeight; })
-              .attr('width', boxWidth)
-              .attr('height', boxHeight)
-              .style('fill', function(d, i) {
-                                        var index = d["ArsenalWin"];
-                                        return colors[index];
-                            })
-              .style('opacity', 0.9)
-              .style("stroke-width", strokeWidth)
-              .style("stroke", strokeColor )
-              .on('mousemove', function(d){mousemove(d)})
-              .on("mouseover", mouseover)
-              .on("mouseout", mouseout);
-            
-            var div = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("opacity", 1e-6);
-
-            function mousemove(d){
-                div
-                .html("Date: " + d["match_date"] + "<br/>"  + "Vs: " + d.opponent
-                     + "<br/>" + "Venue: " + d.venue
-                     + "<br/>" + "Score: " + d.fulltime)
-                .style("left", (d3.event.pageX ) + "px")
-                .style("top", (d3.event.pageY) + "px");
-            }
-
-            function mouseover() {
-                div.transition()
-                .duration(300)
-                .style("opacity", 1);
-            }
-
-            function mouseout() {
-                div.transition()
-                .duration(300)
-                .style("opacity", 1e-6);
-            }
-        });
-  </script>
   <script>
     // hide ipython notebook cell numbers
   $('div.prompt').hide();
@@ -260,4 +167,8 @@
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
+<!-- Pelican Dynamic - for embedding D3 charts
+=================================================== -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="/js/hist_heatmap.js"></script>
 </html>
