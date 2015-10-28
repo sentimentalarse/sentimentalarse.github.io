@@ -5,6 +5,16 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
+<!-- Extra Header for IPython Notebooks
+================================================== -->
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:500px;}
+    /*
+      Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file.
+     */
+  </style>
 
 	<!-- Basic Page Needs
   ================================================== -->
@@ -12,7 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="google-site-verification" content="AgIAQN_qsniIQWOq659Bnhzx-LZts2FdgP1kLgtQg-k" />
 
-  <title>Sentimental Arse</title>
+  <title>Using probabilistic programming to find the inflection point in Arsenal's recent history</title>
 
   <meta name="description" content="">
   <meta name="author" content="SentimenalArse">
@@ -74,13 +84,38 @@
     </div> <!-- End navbar-links -->
 </nav> <!-- End navbar -->		<section id="content" class="twelve columns">
 
-      <h2 class="article-title pull-left"><a href="using-probabilistic-programming-to-find-the-inflection-point-in-arsenal's-recent-history.html" title="Using probabilistic programming to find the inflection point in Arsenal's recent history">Using probabilistic programming to find the inflection point in Arsenal's recent history</a></h2>
-      <h5 class="article-date pull-right">Oct 28, 2015</h5>
-      <hr class="large">
-      <h2 class="article-title pull-left"><a href="heatmap-of-all-the-arsenal-league-games.html" title="Heatmap of all the Arsenal league games">Heatmap of all the Arsenal league games</a></h2>
-      <h5 class="article-date pull-right">Oct 19, 2015</h5>
-      <hr class="large">
+  <!-- Article Headers
+  ================================================================== -->
+  <h1 class="article-title"><a href="/using-probabilistic-programming-to-find-the-inflection-point-in-arsenal's-recent-history.html" title="Permalink to Using probabilistic programming to find the inflection point in Arsenal's recent history">Using probabilistic programming to find the inflection point in Arsenal's recent history</a></h1>
+  <h5 class="article-date">October 28, 2015
+  </h5>
+  <hr class="small"></hr>
 
+  <!-- Article Content
+  ================================================================== -->
+  <div class="article-content">
+    <h2>Can we use probabilistic programming to prove Wenger's revolution?</h2>
+<p>Everbody and their dog who follows Arsenal know that Arsene Wenger revolutionized the way Arsenal play the game. So how does this post end being about Arsene and probabilistic programming? Well, I was going through an excellent book <a href="http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/">"Probabilistic Programming and Bayesian Methods for Hackers"</a> and was curious about where I could use the modeling "expertize" I gained from Chapter 1. It just so happens that I recently found a great <a href="https://github.com/jalapic/engsoccerdata">data source</a> for English soccer results from 1871-2014 and me being SentimentalArse, decided to use Arsenal results to prove once and for all that Arsene Wenger indeed revolutionized Arsenal's game.</p>
+<p>Anyway, I created a model similar to the one used in example <a href="http://nbviewer.ipython.org/github/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/blob/master/Chapter1_Introduction/Chapter1.ipynb#Example:-Inferring-behaviour-from-text-message-data">"Inferring behaviour from text-message data"</a> but replaced message counts by goals scored by Arsenal (I only considered games starting from 1986/01/01 and onwards). The result from the model shows the inflection point gradually starting from August 1996 and reaching its peak in around January 1999. And here is the result. You can clearly see a bump around January, 1999.</p>
+<p><img alt="Alt Text" src="./images/bayesianarsenal.png" /></p>
+  </div>
+
+  <div class="article-sharing">
+    <hr class="small"></hr>
+
+
+    <!-- Back to home
+    ================================================================== -->
+    <div class="back-to-home">
+      <a href="/">← Back to Home</a>
+    </div>
+    <hr class="small"></hr>
+  </div>
+  <script>
+    // hide ipython notebook cell numbers
+  $('div.prompt').hide();
+  $('div.cell').css('margin', '0');
+  </script>
 		</section>
 <!-- Navigation
 ================================================== -->
