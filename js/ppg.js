@@ -92,7 +92,7 @@ d3.csv(dataFile, function(csvData) {
 
     function mousemove(d){
         div
-        .style("height", ((d["TEAM"].length > 12) ? 30 : 23) + "px")
+        .style("height", ((d["TEAM"].length > 10) ? 38 : 25) + "px")//Find better way to change size of tooltip
         .html(d["TEAM"] + ": " + parseFloat(d["PPG"])   .toFixed(2))
         .style("left", (d3.event.pageX ) + "px")
         .style("top", (d3.event.pageY) + "px");
