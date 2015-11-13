@@ -1,0 +1,29 @@
+.lbl {
+  opacity: 0.7;
+  font: 12px Raleway;
+}
+
+.axlbl {
+  opacity: .5;
+  font: 10px Raleway;
+}
+
+.line {
+  fill: none;
+  stroke: #DEDEDE;
+  alpha: 0.5;
+  shape-rendering: crispEdges;
+}
+
+div.tooltip {   
+  position: absolute;           
+  text-align: center;           
+  width: 50px;                  
+  height: 20px;                 
+  padding: 2px;             
+  font-size: 9px;        
+  background: lightsteelblue;   
+  border: 1px;      
+  border-radius: 2px;           
+  pointer-events: none;         
+}
