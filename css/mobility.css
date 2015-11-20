@@ -1,0 +1,32 @@
+path { fill: none; }
+
+#minimalist-table
+{
+    font-size: 11px;
+    color: #696969;
+    border-collapse: collapse;
+    text-align: left;
+}
+#minimalist-table th
+{
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px 8px;
+    border-top: 2px solid #d3d3d3
+}
+#minimalist-table td
+{
+    padding: 4px 4px 4px 8px;
+    border-bottom: none;
+}
+#minimalist-table tr
+{
+    border-bottom: none;
+}
+.fullrow{
+    border-bottom: 2px solid #d3d3d3;
+
+}
+#minimalist-table tr:last-child {
+    border-bottom: 1px solid #d3d3d3; 
+}

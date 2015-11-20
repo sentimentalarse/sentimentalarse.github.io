@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <body>
+            <div id="eng"></div>
+            <div id="fra"></div>
+            <div id="ger"></div>
+            <div id="ita"></div>
+            <div id="spa"></div>
+        </body>
+
+        <script>
+            var margin = {top: 10, right: 10, bottom: 10, left: 10},
+                width = 500 - margin.left - margin.right,
+                height = 100 - margin.top - margin.bottom;
+
+            var x = d3.scale.ordinal()                                                                                                                                                                                                                                                                                                
+                .domain([0, 6, 12, 18, 24])
+                .rangePoints([0, width]);
+
+            var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom")
+                .ticks(5);
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+              .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+            svg.append("g")
+                .attr("class", "x axis")
+                .call(xAxis);
+
+        </script>
+    </head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="/js/hist_heatmap.js"></script>
+</html>
+
