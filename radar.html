@@ -5,6 +5,16 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
+<!-- Extra Header for IPython Notebooks
+================================================== -->
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:500px;}
+    /*
+      Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file.
+     */
+  </style>
 
 	<!-- Basic Page Needs
   ================================================== -->
@@ -12,7 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="google-site-verification" content="AgIAQN_qsniIQWOq659Bnhzx-LZts2FdgP1kLgtQg-k" />
 
-  <title></title>
+  <title>Interseasonal rank mobility in English Premier League 2000-2015</title>
 
   <meta name="description" content="">
   <meta name="author" content="SentimenalArse">
@@ -40,6 +50,9 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+  <!-- Pelican Dynamic - for embedding D3 charts
+  =================================================== -->
+  <link rel="stylesheet" href="/css/mobility.css" type="text/css" />
 
 	<!-- Favicons
 	================================================== -->
@@ -47,6 +60,35 @@
 	<link rel="apple-touch-icon" href="/theme/images/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="/theme/images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="/theme/images/apple-touch-icon-114x114.png">
+
+    <style>
+        .radarchart {
+            min-height: 570px;
+            position: relative;
+            width: auto;
+            margin: auto;
+            display: inline-block;
+            padding-top: 30px;
+        }
+        
+        .chart-container {
+            float: left;
+            text-align: center;
+            border-radius: 5px;
+            padding: 3px 5px 5px 5px;
+            transition: all 0.10s ease-in-out;
+            -webkit-transition: all 0.10s ease-in-out;
+            -moz-transition: all 0.10s ease-in-out;
+            -o-transition: all 0.10s ease-in-out;
+            position: relative;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .lblP {
+            margin-bottom: 0px;
+        }
+    </style>
 
 </head>
 <body>
@@ -72,27 +114,55 @@
           <!--  <li><a href="/blog/">Blog</a></li> -->
       </ul> <!-- End navbar-links ul -->
     </div> <!-- End navbar-links -->
-</nav> <!-- End navbar -->		<section id="content" class="twelve columns">
-<h1>Archives for Sentimental Arse</h1>
+</nav> <!-- End navbar -->		
+<section id="content" class="twelve columns">
 
-<dl>
-    <dt>Thu 17 December 2015</dt>
-    <dd><a href="./visualizing-arsenal-players-stats-using-radar-chart.html">Visualizing Arsenal players stats using radar chart</a></dd>
-    <dt>Fri 20 November 2015</dt>
-    <dd><a href="./interseasonal-rank-mobility-in-english-premier-league-2000-2015.html">Interseasonal rank mobility in English Premier League 2000-2015</a></dd>
-    <dt>Fri 13 November 2015</dt>
-    <dd><a href="./points-per-game-in-top-european-football-leagues-2015-2016.html">Points per game in top European football leagues 2015-2016</a></dd>
-    <dt>Wed 28 October 2015</dt>
-    <dd><a href="./using-probabilistic-programming-to-find-the-inflection-point-in-arsenal's-recent-history.html">Using probabilistic programming to find the inflection point in Arsenal's recent history</a></dd>
-    <dt>Mon 19 October 2015</dt>
-    <dd><a href="./heatmap-of-all-the-arsenal-league-games.html">Heatmap of all the Arsenal league games</a></dd>
-</dl>
-		</section>
+  <!-- Article Headers
+  ================================================================== -->
+  <h1 class="article-title"><a href="/interseasonal-rank-mobility-in-english-premier-league-2000-2015.html" title="Permalink to Interseasonal rank mobility in English Premier League 2000-2015">Interseasonal rank mobility in English Premier League 2000-2015</a></h1>
+  <h5 class="article-date">November 20, 2015
+  </h5>
+  <hr class="small"></hr>
+
+  <!-- Article Content
+  ================================================================== -->
+  <div class="row">
+      <h3>Defenders</h3>
+      <div class="radarChart twelve columns" id="defenders"></div>
+  </div>
+  <div class="row">
+      <h3>Midfielders</h3>
+      <div class="radarChart twelve columns" id="midfielders"</div>
+  </div>
+  <div class="row">
+      <h3>Strikers</h3>
+      <div class="radarChart twelve columns" id="strikers"></div>
+  </div>    
+  <div class="article-sharing">
+    <hr class="small"></hr>
+
+
+    <!-- Back to home
+    ================================================================== -->
+    <div class="back-to-home">
+      <a href="/">← Back to Home</a>
+    </div>
+    <hr class="small"></hr>
+  </div>
+  <script>
+    // hide ipython notebook cell numbers
+  $('div.prompt').hide();
+  $('div.cell').css('margin', '0');
+  </script>
+  
+  
+
+</section>
 <!-- Navigation
 ================================================== -->
 <footer class="twelve columns">
 	<!-- <hr class="small"> -->
-  <p>Generated with <a href="http://getpelican.com">Pelican</a>. Layout done with <a href="http://getskeleton.com">Skeleton</a>. Icons are <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a>.</p>
+  <p>Generated with <a href="http://getpelican.com">Pelican</a>. Layout done with <a href="http://getskeleton.com">Skeleton</a>. Icons are <a href="http://fontawesome.github.com/Font-Awesome/">Font Awesome</a>.</p>
   <p>&copy; Copyright SentimenalArse, 2015 to present</p>
 </footer>	</div><!-- container -->
 
@@ -137,4 +207,45 @@
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
+<!-- Pelican Dynamic - for embedding D3 charts
+=================================================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script src="js/radarchart.js"></script>
+<script>
+    d3.json("data/ars/attr.json", function(data) {
+        for (var i = 1; i < 9; i++) {
+            var row = data[i];
+            var playerName = row["Name"];
+            var stats = row["Stats"];
+            var radarChartOptions = {
+			  name: playerName
+			};
+            RadarChart("#defenders", stats, radarChartOptions);
+            //break;
+        }
+        
+        for (var i = 9; i < 16; i++) {
+            var row = data[i];
+            var playerName = row["Name"];
+            var stats = row["Stats"];
+            var radarChartOptions = {
+			  name: playerName
+			};
+            RadarChart("#midfielders", stats, radarChartOptions);
+            //break;
+        }
+        
+        for (var i = 16; i < data.length - 1; i++) {
+            var row = data[i];
+            var playerName = row["Name"];
+            var stats = row["Stats"];
+            var radarChartOptions = {
+			  name: playerName
+			};
+            RadarChart("#strikers", stats, radarChartOptions);
+            //break;
+        }
+      
+    });
+</script>
 </html>

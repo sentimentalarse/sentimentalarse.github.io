@@ -1,0 +1,26 @@
+.radarchart {
+    min-height: 570px;
+    position: relative;
+    width: auto;
+    margin: auto;
+    display: inline-block;
+    padding-top: 30px;
+}
+
+.chart-container {
+    float: left;
+    text-align: center;
+    border-radius: 5px;
+    padding: 3px 5px 5px 5px;
+    transition: all 0.10s ease-in-out;
+    -webkit-transition: all 0.10s ease-in-out;
+    -moz-transition: all 0.10s ease-in-out;
+    -o-transition: all 0.10s ease-in-out;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.lblP {
+    margin-bottom: 0px;
+}

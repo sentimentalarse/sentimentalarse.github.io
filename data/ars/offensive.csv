@@ -1,0 +1,22 @@
+playedPositionsShort,goal,assistTotal,keyPassPerGame,shotsPerGame,firstName,lastName,name
+FW,1.0,0.0,0.129807692308,0.644736842105,Olivier,Giroud,Olivier Giroud
+"AM(CLR),FW",0.666666666667,0.0769230769231,0.395604395604,1.0,Alexis,Sánchez,Alexis Sánchez
+M(CR),0.333333333333,0.0769230769231,0.384615384615,0.777777777778,Aaron,Ramsey,Aaron Ramsey
+"AM(LR),FW",0.222222222222,0.0,0.0769230769231,0.286549707602,Joel,Campbell,Joel Campbell
+D(C),0.222222222222,0.0,0.0824175824176,0.19298245614,Laurent,Koscielny,Laurent Koscielny
+AM(CLR),0.222222222222,1.0,1.0,0.360233918129,Mesut,Özil,Mesut Özil
+"AM(R),FW",0.222222222222,0.153846153846,0.161538461538,0.663157894737,Theo,Walcott,Theo Walcott
+D(L),0.111111111111,0.0,0.0288461538462,0.15350877193,Kieran,Gibbs,Kieran Gibbs
+M,0.0,0.0,0.0,0.0,Alex,Iwobi,Alex Iwobi
+M(CLR),0.0,0.0,0.195266272189,0.264507422402,Alex,Oxlade-Chamberlain,Alex Oxlade-Chamberlain
+D(CR),0.0,0.0,0.0461538461538,0.0982456140351,Calum,Chambers,Calum Chambers
+M(CLR),0.0,0.0,0.0576923076923,0.102339181287,Francis,Coquelin,Francis Coquelin
+D(C),0.0,0.0,0.0,0.105263157895,Gabriel Armando,de Abreu,Gabriel Armando de Abreu
+"D(R),M(R)",0.0,0.0769230769231,0.181318681319,0.0877192982456,Héctor,Bellerín,Héctor Bellerín
+D(R),0.0,0.0,0.115384615385,0.122807017544,Mathieu,Debuchy,Mathieu Debuchy
+DM(C),0.0,0.0,0.0659340659341,0.0701754385965,Mathieu,Flamini,Mathieu Flamini
+"DM(C),M(L)",0.0,0.0,0.0,0.0,Mikel,Arteta,Mikel Arteta
+D(CL),0.0,0.153846153846,0.230769230769,0.030701754386,Nacho,Monreal,Nacho Monreal
+D(C),0.0,0.0,0.0,0.0446570972887,Per,Mertesacker,Per Mertesacker
+GK,0.0,0.0,0.0144230769231,0.0,Petr,Cech,Petr Cech
+M(CLR),0.0,0.230769230769,0.60989010989,0.40350877193,Santiago,Cazorla,Santiago Cazorla

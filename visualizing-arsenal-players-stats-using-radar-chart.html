@@ -5,6 +5,16 @@
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
+<!-- Extra Header for IPython Notebooks
+================================================== -->
+  <link href="//cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:500px;}
+    /*
+      Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+      We recommend moving this block and the preceding CSS link to the HEAD of your HTML file.
+     */
+  </style>
 
 	<!-- Basic Page Needs
   ================================================== -->
@@ -12,7 +22,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="google-site-verification" content="AgIAQN_qsniIQWOq659Bnhzx-LZts2FdgP1kLgtQg-k" />
 
-  <title></title>
+  <title>Visualizing Arsenal players stats using radar chart</title>
 
   <meta name="description" content="">
   <meta name="author" content="SentimenalArse">
@@ -40,6 +50,9 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
+  <!-- Pelican Dynamic - for embedding D3 charts
+  =================================================== -->
+  <link rel="stylesheet" href="/css/radar.css" type="text/css" />
 
 	<!-- Favicons
 	================================================== -->
@@ -73,20 +86,50 @@
       </ul> <!-- End navbar-links ul -->
     </div> <!-- End navbar-links -->
 </nav> <!-- End navbar -->		<section id="content" class="twelve columns">
-<h1>Archives for Sentimental Arse</h1>
 
-<dl>
-    <dt>Thu 17 December 2015</dt>
-    <dd><a href="./visualizing-arsenal-players-stats-using-radar-chart.html">Visualizing Arsenal players stats using radar chart</a></dd>
-    <dt>Fri 20 November 2015</dt>
-    <dd><a href="./interseasonal-rank-mobility-in-english-premier-league-2000-2015.html">Interseasonal rank mobility in English Premier League 2000-2015</a></dd>
-    <dt>Fri 13 November 2015</dt>
-    <dd><a href="./points-per-game-in-top-european-football-leagues-2015-2016.html">Points per game in top European football leagues 2015-2016</a></dd>
-    <dt>Wed 28 October 2015</dt>
-    <dd><a href="./using-probabilistic-programming-to-find-the-inflection-point-in-arsenal's-recent-history.html">Using probabilistic programming to find the inflection point in Arsenal's recent history</a></dd>
-    <dt>Mon 19 October 2015</dt>
-    <dd><a href="./heatmap-of-all-the-arsenal-league-games.html">Heatmap of all the Arsenal league games</a></dd>
-</dl>
+  <!-- Article Headers
+  ================================================================== -->
+  <h1 class="article-title"><a href="/visualizing-arsenal-players-stats-using-radar-chart.html" title="Permalink to Visualizing Arsenal players stats using radar chart">Visualizing Arsenal players stats using radar chart</a></h1>
+  <h5 class="article-date">December 17, 2015
+  </h5>
+  <hr class="small"></hr>
+
+  <!-- Article Content
+  ================================================================== -->
+  <div class="article-content">
+    <h3><strong>Visualizing player performance using radar chart</strong></h3>
+<p>The inspiration of this post comes from this <a href="http://wonkviz.tumblr.com/post/72159021235/whiskey-flavor-profiles">awesome whiskey flavor profile chart</a> and great work by <a href="http://www.visualcinnamon.com/2015/10/different-look-d3-radar-chart.html">Nadieh Bremer</a>. Radar chart is a great way to visualize multivariate data in two-dimension and the charts below is an attempt at summarizing the defensive and offensive performance of players compared to top performers in the team. By the way, the data was collected from <a href="http://whoscored.com">Whoscored.com</a> and is up to date until December 15th 2015. </p>
+<div class="row">
+  <h3>Defenders</h3>
+  <div class="radarChart twelve columns" id="defenders"></div>
+</div>
+
+<div class="row">
+  <h3>Midfielders</h3>
+  <div class="radarChart twelve columns" id="midfielders"</div>
+</div>
+<div class="row">
+  <h3>Strikers</h3>
+  <div class="radarChart twelve columns" id="strikers"></div>
+</div>
+  </div>
+
+  <div class="article-sharing">
+    <hr class="small"></hr>
+
+
+    <!-- Back to home
+    ================================================================== -->
+    <div class="back-to-home">
+      <a href="/">← Back to Home</a>
+    </div>
+    <hr class="small"></hr>
+  </div>
+  <script>
+    // hide ipython notebook cell numbers
+  $('div.prompt').hide();
+  $('div.cell').css('margin', '0');
+  </script>
 		</section>
 <!-- Navigation
 ================================================== -->
@@ -137,4 +180,9 @@
 <script type="text/javascript" async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
+<!-- Pelican Dynamic - for embedding D3 charts
+=================================================== -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="/js/radarchart.js"></script>
+<script src="/js/radarmain.js"></script>
 </html>
