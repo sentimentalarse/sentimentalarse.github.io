@@ -3,12 +3,16 @@
   "private": true,
   "scripts": {
     "build": "python3 scripts/build.py",
-    "check": "python3 scripts/check.py && node scripts/test-charts.cjs",
+    "check": "python3 scripts/check.py && python3 -m unittest discover -s scripts -p \"test_*.py\" && node scripts/test-charts.cjs",
     "test": "npm run check",
-    "dev": "python3 -m http.server 8000 --bind 127.0.0.1"
+    "dev": "python3 -m http.server 8000 --bind 127.0.0.1",
+    "post": "python3 scripts/new_post.py"
   },
   "devDependencies": {
-    "jsdom": "26.1.0"
+    "jsdom": "26.1.0",
+    "markdown-it": "15.0.3"
   },
-  "engines": {"node": ">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

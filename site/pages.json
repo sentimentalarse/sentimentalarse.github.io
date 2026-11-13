@@ -1,7 +1,7 @@
 [
   {
     "path": "archives.html",
-    "title": "",
+    "title": "Archives \u2014 Sentimental Arse",
     "description": "Archives for Sentimental Arse Thu 17 December 2015 Visualizing Arsenal players stats using radar chart Fri 20 November 2015 Interseasonal rank mobility in ",
     "css": [],
     "scripts": []
@@ -71,7 +71,9 @@
     ],
     "scripts": [
       "hist_heatmap"
-    ]
+    ],
+    "kind": "post",
+    "date": "2015-10-19"
   },
   {
     "path": "horizon.html",
@@ -97,7 +99,9 @@
     "scripts": [
       "rankchart",
       "interseason"
-    ]
+    ],
+    "kind": "post",
+    "date": "2015-11-20"
   },
   {
     "path": "multiple.html",
@@ -122,7 +126,9 @@
     ],
     "scripts": [
       "ppg"
-    ]
+    ],
+    "kind": "post",
+    "date": "2015-11-13"
   },
   {
     "path": "radar.html",
@@ -164,7 +170,9 @@
     "title": "Using probabilistic programming to find the inflection point in Arsenal's recent history",
     "description": "Using probabilistic programming to find the inflection point in Arsenal's recent history October 28, 2015 Can we use probabilistic programming to prove Wen",
     "css": [],
-    "scripts": []
+    "scripts": [],
+    "kind": "post",
+    "date": "2015-10-28"
   },
   {
     "path": "visualizing-arsenal-players-stats-using-radar-chart.html",
@@ -176,7 +184,9 @@
     "scripts": [
       "radarchart",
       "radarmain"
-    ]
+    ],
+    "kind": "post",
+    "date": "2015-12-17"
   },
   {
     "path": "data/README.html",

@@ -37,7 +37,7 @@ tracked = set(subprocess.check_output(
 required = set(outputs)
 for directory, suffixes in {
     "js": {".js"}, "css": {".css"}, "data": {".csv", ".json"},
-    "site": {".html", ".json"}, "scripts": {".py", ".cjs"},
+    "site": {".html", ".json", ".md", ".markdown"}, "scripts": {".py", ".cjs"},
 }.items():
     required.update(path.relative_to(ROOT).as_posix()
                     for path in (ROOT / directory).rglob("*")
