@@ -1,25 +1,25 @@
 path { fill: none; }
 
-#minimalist-table
+:is(#rank-detail-table, #mobility-summary-table)
 {
     font-size: 11px;
     color: #696969;
     border-collapse: collapse;
     text-align: left;
 }
-#minimalist-table th
+:is(#rank-detail-table, #mobility-summary-table) th
 {
     font-size: 11px;
     font-weight: bold;
     padding: 10px 8px;
     border-top: 2px solid #d3d3d3
 }
-#minimalist-table td
+:is(#rank-detail-table, #mobility-summary-table) td
 {
     padding: 4px 4px 4px 8px;
     border-bottom: none;
 }
-#minimalist-table tr
+:is(#rank-detail-table, #mobility-summary-table) tr
 {
     border-bottom: none;
 }
@@ -27,6 +27,6 @@ path { fill: none; }
     border-bottom: 2px solid #d3d3d3;
 
 }
-#minimalist-table tr:last-child {
+:is(#rank-detail-table, #mobility-summary-table) tr:last-child {
     border-bottom: 1px solid #d3d3d3; 
 }

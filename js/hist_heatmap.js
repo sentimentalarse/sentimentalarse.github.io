@@ -1,4 +1,5 @@
-var dataFile = "arsenal_result";
+(function () {
+var dataFile = "data/arsenal-results.csv";
     var margin = { top: 25, right: 0, bottom: 50, left: 15 },
       width = 480 - margin.left - margin.right,
       height = 800 - margin.top - margin.bottom,
@@ -9,13 +10,13 @@ var dataFile = "arsenal_result";
       strokeColor = "#E6E6E6",
       strokeWidth = 1,
       colors = ["#449458", "#edebe8", "#f17f51"];
-    
+
     var svg = d3.select("#chart").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g");
-    
-    d3.csv(dataFile, function(csvData) {
+
+    SiteCharts.load("csv", dataFile, function(csvData) {
         var data = csvData;
         svg.selectAll(".box")
           .data(data)
@@ -36,7 +37,7 @@ var dataFile = "arsenal_result";
           .on('mousemove', function(d){mousemove(d)})
           .on("mouseover", mouseover)
           .on("mouseout", mouseout);
-        
+
         var div = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 1e-6);
@@ -62,3 +63,5 @@ var dataFile = "arsenal_result";
             .style("opacity", 1e-6);
         }
     });
+
+}());

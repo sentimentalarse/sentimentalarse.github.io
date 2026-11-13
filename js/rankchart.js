@@ -1,16 +1,17 @@
-WIDTH = 350;
-HEIGHT = 460;
+(function () {
+var WIDTH = 350;
+var HEIGHT = 460;
 
-LEFT_MARGIN = 10;
-RIGHT_MARGIN = 20;
-TOP_MARGIN = 10;
-BOTTOM_MARGIN = 10;
+var LEFT_MARGIN = 10;
+var RIGHT_MARGIN = 20;
+var TOP_MARGIN = 10;
+var BOTTOM_MARGIN = 10;
 
-RANK_RECT_WIDTH = 7;
-RANK_RECT_HEIGHT = 15;
-RANK_GAP = 5;
+var RANK_RECT_WIDTH = 7;
+var RANK_RECT_HEIGHT = 15;
+var RANK_GAP = 5;
 
-points = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+var points = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
 var svg = d3.select("#chart").append("svg")
       .attr("width", WIDTH + LEFT_MARGIN + RIGHT_MARGIN)
@@ -72,7 +73,7 @@ var columns = [{text: 'Standing after 12 games', colName: "start"},
               ];
 
 var table = d3.select('#tbl').append('table');
-table.attr('id', "minimalist-table");
+table.attr('id', "rank-detail-table");
 
 table.append('thead').append('tr')
     .selectAll('th')
@@ -109,12 +110,12 @@ function createTableBody(tableData) {
 }
 
 var eplRankChangeData= [];
-d3.csv("data/eplrankchange.csv", function(csvData) {
+SiteCharts.load("csv", "data/eplrankchange.csv", function(csvData) {
     eplRankChangeData = csvData;
     createTableBody(eplRankChangeData)
 });
 
-d3.csv("data/rankchangedn.csv", function(csvData) {
+SiteCharts.load("csv", "data/rankchangedn.csv", function(csvData) {
     var data = csvData;
     var link = svg.selectAll(".link")
         .data(data)
@@ -141,11 +142,13 @@ d3.csv("data/rankchangedn.csv", function(csvData) {
         }
 
         function mouseout(d) {
-            d3.selectAll('path')
+            svg.selectAll('path')
             .transition()
             .duration(400)
             .style("stroke", "#e4e4e4");
             createTableBody(eplRankChangeData);
-        } 
+        }
 });
 
+
+}());

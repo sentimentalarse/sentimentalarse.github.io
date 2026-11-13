@@ -1,63 +1,39 @@
-
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Sentimental Arse">
+<meta name="google-site-verification" content="AgIAQN_qsniIQWOq659Bnhzx-LZts2FdgP1kLgtQg-k">
+<title>Horizon chart — archived prototype</title>
+<meta name="description" content="Horizon chart — archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are shown h">
+<link rel="canonical" href="https://sentimentalarse.github.io/horizon.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sentimental Arse">
+<meta property="og:title" content="Horizon chart — archived prototype">
+<meta property="og:description" content="Horizon chart — archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are shown h">
+<meta property="og:url" content="https://sentimentalarse.github.io/horizon.html">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/theme/images/favicon.ico">
+<link rel="stylesheet" href="/theme/css/base.css">
+<link rel="stylesheet" href="/theme/css/skeleton.css">
+<link rel="stylesheet" href="/theme/css/layout.css">
+<link rel="stylesheet" href="/theme/css/void.css">
+<link rel="stylesheet" href="/theme/css/pygment.css">
 
-body {
-  font-family: sans-serif;
-}
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+<div class="container">
+<nav class="navbar" aria-label="Main navigation">
+<div class="navbar-brand"><a href="/"><img id="logo" src="/theme/images/avatar.jpg" alt=""> Sentimental Arse</a></div>
+<div class="navbar-links"><a href="/archives.html">Archive</a> <a href="/categories.html">Categories</a> <a href="/data/README.html">Data</a></div>
+</nav>
+<main id="content" tabindex="-1"><h1>Horizon chart — archived prototype</h1><p>This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are shown here.</p><p>Explore the published <a href="/visualizing-arsenal-players-stats-using-radar-chart.html">player radar charts</a>, <a href="/heatmap-of-all-the-arsenal-league-games.html">Arsenal results heatmap</a>, or <a href="/">article archive</a>.</p>
+</main>
+<footer><p>Arsenal, football analytics, and visualization.</p><p>© Sentimental Arse · Historical articles originally published in 2015.</p></footer>
+</div>
 
-svg {
-  position: absolute;
-  top: 0;
-}
-
-#horizon-controls {
-  position: absolute;
-  width: 940px;
-  padding: 10px;
-  z-index: 1;
-}
-
-#horizon-bands {
-  float: right;
-}
-
-</style>
-
-<div id="horizon-chart"></div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
-<script src="horizon.js?0.0.1"></script>
-<script>
-
-var width = 300,
-    height = 25;
-
-var chart = d3.horizon()
-    .width(width)
-    .height(height)
-    .bands(1)
-    .mode("offset")
-    .interpolate("basis");
-
-var svg = d3.select("body").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-d3.json("unemployment.json", function(error, data) {
-
-  // Offset so that positive is above-average and negative is below-average.
-  var mean = data.rate.reduce(function(p, v) { return p + v; }, 0) / data.rate.length;
-
-  // Transpose column values to rows.
-  data = data.rate.map(function(rate, i) {
-    return [Date.UTC(data.year[i], data.month[i] - 1), rate - mean];
-  });
-
-  // Render the chart.
-  svg.data([data]).call(chart);
-
-  
-});
-
-</script>
+</body>
+</html>

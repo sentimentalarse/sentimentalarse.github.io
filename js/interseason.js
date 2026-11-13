@@ -1,5 +1,6 @@
+(function () {
 var table2 = d3.select('#mtbl').append('table');
-table2.attr('id', "minimalist-table");
+table2.attr('id', "mobility-summary-table");
 table2.attr("class", "u-full-width");
 
 var thead = table2.append('thead')
@@ -15,7 +16,7 @@ topHRow.append('th')
     .attr("align", "center")
     .text("Destination class");
 
-columnNames = ["Origin class", 'Elites', 'Wannabes', 'Middlers', 'Strugglers', 'No-hopers'];
+var columnNames = ["Origin class", 'Elites', 'Wannabes', 'Middlers', 'Strugglers', 'No-hopers'];
 
 thead.append('tr')
     .selectAll('th')
@@ -26,7 +27,7 @@ thead.append('tr')
 
 var tbody2 = table2.append('tbody');
 
-d3.csv("data/interseasonal.csv", function(data){
+SiteCharts.load("csv", "data/interseasonal.csv", function(data){
     var rows = tbody2.selectAll("tr")
         .data(data)
 
@@ -36,8 +37,8 @@ d3.csv("data/interseasonal.csv", function(data){
     var cells = rows.selectAll("td")
         .data(function(row, i) {
             return columnNames.map(function(c) {
-                console.log(row);
-                console.log(c);
+
+
                 return {column: c, value: row[c]};
             });
         });
@@ -50,3 +51,5 @@ d3.csv("data/interseasonal.csv", function(data){
     cells.exit().remove();
     rows.exit().remove();
 });
+
+}());

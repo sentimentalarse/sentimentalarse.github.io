@@ -1,4 +1,5 @@
-var dataFile = ['data/combined.csv'];
+(function () {
+var dataFile = "data/combined.csv";
 var lineYs = {"England": 10, "France": 50, "Germany": 90, "Italy":130, "Spain": 170};
 var cntrySvg = {"England": "images/eng.svg", "France": "images/fra.svg", "Germany": "images/ger.svg", "Italy": "images/ita.svg", "Spain": "images/spa.svg"};
 var colorParam = "#53868B";
@@ -13,7 +14,7 @@ var svg = d3.select("#chart")
     .attr("height", height + margin.top + margin.bottom);
 
 
-d3.csv(dataFile, function(csvData) {
+SiteCharts.load("csv", dataFile, function(csvData) {
     var data = csvData;
     var bins = {};
 
@@ -26,21 +27,37 @@ d3.csv(dataFile, function(csvData) {
             if (record.hasOwnProperty(d["PPG"].toString())) {
                 record[d["PPG"].toString()].push(d["Team"]);
             } else {
-                record[d["PPG"].toString()] = [d["Team"]]; 
+                record[d["PPG"].toString()] = [d["Team"]];
             }
             bins[cntry] = record;
         } else {
             var record = {};
-            record[d["PPG"].toString()] = [d["Team"]]; 
+            record[d["PPG"].toString()] = [d["Team"]];
             bins[cntry] = record;
         }
     }
 
     var binnedData = [];
-    for (property in bins) {
+    for (var property in bins) {
         var cntryData = bins[property];
-        
-        for (prop in cntryData){
+            var lineY = lineYs[property];
+            //Chart line
+            svg.append("line")
+                .attr("class", "line")
+                .attr("x1", 5)
+                .attr("y1", lineY)
+                .attr("x2", 305)
+                .attr("y2", lineY);
+
+            //Flag icons
+            svg.append("image")
+                .attr("xlink:href", cntrySvg[property])
+                .attr("width", 30)
+                .attr("height", 20)
+                .attr("x", 310)
+                .attr("y", lineY - 10);
+
+        for (var prop in cntryData){
             var teams = cntryData[prop];
             for (var i = 0; i < teams.length; i++) {
                 var row = {};
@@ -50,24 +67,9 @@ d3.csv(dataFile, function(csvData) {
                 row["CNTRY"] = property;
                 binnedData.push(row);
             }
-            
-            
-            var lineY = lineYs[property];
-            //Chart line
-            svg.append("line")
-                .attr("class", "line")
-                .attr("x1", 5)
-                .attr("y1", lineY)
-                .attr("x2", 305)
-                .attr("y2", lineY);
-            
-            //Flag icons
-            svg.append("image")
-                .attr("xlink:href", cntrySvg[property])
-                .attr("width", 30)
-                .attr("height", 20)
-                .attr("x", 310)
-                .attr("y", lineY - 10);
+
+
+
         }
     }
 
@@ -84,7 +86,7 @@ d3.csv(dataFile, function(csvData) {
         .on('mousemove', function(d){mousemove(d)})
         .on("mouseover", mouseover)
         .on("mouseout", mouseout);
-    
+
     //Tooltip for club circle
     var div = d3.select("body").append("div")
     .attr("class", "tooltip")
@@ -109,7 +111,7 @@ d3.csv(dataFile, function(csvData) {
         .duration(300)
         .style("opacity", 1e-6);
     }
-    
+
     //Axis line
     svg.append("line")
         .attr("class", "line")
@@ -117,34 +119,34 @@ d3.csv(dataFile, function(csvData) {
         .attr("y1", 210)
         .attr("x2", 305)
         .attr("y2", 210);
-    
+
     svg.append("line")
         .attr("class", "line")
         .attr("x1", 5)
         .attr("y1", 210)
         .attr("x2", 5)
         .attr("y2", 207);
-    
+
     svg.append("line")
         .attr("class", "line")
         .attr("x1", 305)
         .attr("y1", 210)
         .attr("x2", 305)
         .attr("y2", 207);
-    
+
     svg.append("line")
         .attr("class", "line")
         .attr("x1", 155)
         .attr("y1", 210)
         .attr("x2", 155)
         .attr("y2", 205);
-    
+
     //Axis label
     svg.append("text")
         .attr("class", "axlbl")
         .attr("x", 303)
         .attr("y", 205)
-        .text("3"); 
+        .text("3");
 
     svg.append("text")
         .attr("class", "axlbl")
@@ -158,5 +160,7 @@ d3.csv(dataFile, function(csvData) {
         .attr("x", 18)
         .attr("y", 230)
         .text("Current points per game in top European leagues");
-    
+
     });
+
+}());
