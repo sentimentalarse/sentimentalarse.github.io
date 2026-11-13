@@ -1,0 +1,14 @@
+{
+  "name": "sentimental-arse",
+  "private": true,
+  "scripts": {
+    "build": "python3 scripts/build.py",
+    "check": "python3 scripts/check.py && node scripts/test-charts.cjs",
+    "test": "npm run check",
+    "dev": "python3 -m http.server 8000 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  },
+  "engines": {"node": ">=20"}
+}

@@ -1,0 +1,36 @@
+/* Shared fixes layered over the preserved Skeleton theme. */
+* { box-sizing: border-box; }
+body { margin: 0; }
+.navbar { position: relative; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; padding: 1rem 0; }
+.navbar-brand { float: none; font-size: 2.2rem; }
+.navbar-links { float: none; padding: 0; display: flex; gap: 1.5rem; }
+#logo { float: none; vertical-align: middle; margin: 0 .5rem 0 0; }
+#content { margin: 2rem auto; width: 100%; }
+.article-content { overflow: visible; }
+.article-content p { line-height: 1.65; }
+#chart svg { max-width: 100%; height: auto; display: block; }
+.chart-container svg { max-width: 100%; height: auto; }
+.radarChart { display: flex; flex-wrap: wrap; gap: 1rem; }
+.chart-container { float: none; max-width: 100%; }
+.snapshot-note, .chart-status { padding: 1rem 1.4rem; border-left: 3px solid #b5121b; background: #faf6f3; }
+.chart-error { color: #8a1420; }
+.data-table { margin: 2rem 0; clear: both; }
+.data-table summary { cursor: pointer; font-weight: bold; }
+.table-scroll, #tbl, #mtbl { overflow-x: auto; max-width: 100%; }
+th { text-align: left; }
+.data-table td { white-space: nowrap; }
+.data-table button { margin: 1rem 1rem 0 0; }
+.tooltip { pointer-events: none; }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex="0"]:focus-visible { outline: 3px solid #126b9b; outline-offset: 3px; }
+.skip-link { position: absolute; top: -100px; left: 1rem; z-index: 100; background: white; padding: 1rem; }
+.skip-link:focus { top: 0; }
+.prompt { display: none; }
+.cell { margin: 0; }
+footer { clear: both; padding: 2rem 0; border-top: 1px solid #ddd; }
+@media (max-width: 650px) {
+ .navbar { justify-content: center; text-align: center; }
+ .navbar-links { width: 100%; justify-content: center; }
+ #chart.columns, #tbl.columns { float: none; width: 100%; margin: 0; padding-left: 0 !important; }
+ .article-title { overflow-wrap: anywhere; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }

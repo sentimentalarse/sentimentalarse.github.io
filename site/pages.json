@@ -1,0 +1,202 @@
+[
+  {
+    "path": "archives.html",
+    "title": "",
+    "description": "Archives for Sentimental Arse Thu 17 December 2015 Visualizing Arsenal players stats using radar chart Fri 20 November 2015 Interseasonal rank mobility in ",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "area.html",
+    "title": "Area chart \u2014 archived prototype",
+    "description": "Area chart \u2014 archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are shown here",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "author/sentimenalarse.html",
+    "title": "Sentimental Arse - Articles by Sentimental Arse",
+    "description": "first_post Oct 19, 2015",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "author/sentimental-arse.html",
+    "title": "Sentimental Arse - Articles by Sentimental Arse",
+    "description": "Visualizing Arsenal players stats using radar chart Dec 17, 2015 Interseasonal rank mobility in English Premier League 2000-2015 Nov 20, 2015 Points per ga",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "authors.html",
+    "title": "Sentimental Arse - Authors",
+    "description": "Authors on Sentimental Arse Sentimental Arse (5)",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "categories.html",
+    "title": "",
+    "description": "misc Visualization",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "category/misc.html",
+    "title": "Sentimental Arse",
+    "description": "Visualizing Arsenal players stats using radar chart Dec 17, 2015 Interseasonal rank mobility in English Premier League 2000-2015 Nov 20, 2015 Using probabi",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "category/test.html",
+    "title": "Sentimental Arse",
+    "description": "first_post Oct 19, 2015",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "category/visualization.html",
+    "title": "Sentimental Arse",
+    "description": "Points per game in top European football leagues 2015-2016 Nov 13, 2015",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "heatmap-of-all-the-arsenal-league-games.html",
+    "title": "Heatmap of all the Arsenal league games",
+    "description": "Heatmap of all the Arsenal league games October 19, 2015 A look at Arsenal's chequered history \u2190 Back to Home",
+    "css": [
+      "hist_style"
+    ],
+    "scripts": [
+      "hist_heatmap"
+    ]
+  },
+  {
+    "path": "horizon.html",
+    "title": "Horizon chart \u2014 archived prototype",
+    "description": "Horizon chart \u2014 archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are shown h",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "index.html",
+    "title": "Sentimental Arse",
+    "description": "Visualizing Arsenal players stats using radar chart Dec 17, 2015 Interseasonal rank mobility in English Premier League 2000-2015 Nov 20, 2015 Points per ga",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "interseasonal-rank-mobility-in-english-premier-league-2000-2015.html",
+    "title": "Interseasonal rank mobility in English Premier League 2000-2015",
+    "description": "Interseasonal rank mobility in English Premier League 2000-2015 November 20, 2015 Is there any hope for the no-hopers and the strugglers? Lack of league fo",
+    "css": [
+      "mobility"
+    ],
+    "scripts": [
+      "rankchart",
+      "interseason"
+    ]
+  },
+  {
+    "path": "multiple.html",
+    "title": "Multiple-series chart \u2014 archived prototype",
+    "description": "Multiple-series chart \u2014 archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "one-d-chart.html",
+    "title": "One-dimensional chart \u2014 archived prototype",
+    "description": "One-dimensional chart \u2014 archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "points-per-game-in-top-european-football-leagues-2015-2016.html",
+    "title": "Points per game in top European football leagues 2015-2016",
+    "description": "Points per game in top European football leagues 2015-2016 November 13, 2015 Points per game from top leagues in Europe so far this season Inspired by a vi",
+    "css": [
+      "ppg"
+    ],
+    "scripts": [
+      "ppg"
+    ]
+  },
+  {
+    "path": "radar.html",
+    "title": "Radar chart prototype \u2014 archived prototype",
+    "description": "Radar chart prototype \u2014 archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "steamgraph.html",
+    "title": "Streamgraph \u2014 archived prototype",
+    "description": "Streamgraph \u2014 archived prototype This unfinished prototype has been archived. Its original code or supporting data was incomplete; no results are shown her",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "tag/heatmap.html",
+    "title": "Posts tagged with: heatmap",
+    "description": "Posts tagged with: heatmap Heatmap of all Arsenal games Oct 19, 2015 \u2190 Back to Home",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "tag/visualization.html",
+    "title": "Posts tagged with: Visualization",
+    "description": "Posts tagged with: Visualization Heatmap of all Arsenal games Oct 19, 2015 \u2190 Back to Home",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "tags.html",
+    "title": "Sentimental Arse - Tags",
+    "description": "Tags for Sentimental Arse",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "using-probabilistic-programming-to-find-the-inflection-point-in-arsenal's-recent-history.html",
+    "title": "Using probabilistic programming to find the inflection point in Arsenal's recent history",
+    "description": "Using probabilistic programming to find the inflection point in Arsenal's recent history October 28, 2015 Can we use probabilistic programming to prove Wen",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "visualizing-arsenal-players-stats-using-radar-chart.html",
+    "title": "Visualizing Arsenal players stats using radar chart",
+    "description": "Visualizing Arsenal players stats using radar chart December 17, 2015 Visualizing player performance using radar chart The inspiration for this post comes ",
+    "css": [
+      "radar"
+    ],
+    "scripts": [
+      "radarchart",
+      "radarmain"
+    ]
+  },
+  {
+    "path": "data/README.html",
+    "title": "Historical football datasets",
+    "description": "Sources, snapshot dates, units, and definitions for the historical football datasets used on Sentimental Arse.",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "first_post.html",
+    "title": "Archived test post",
+    "description": "Archived test post on Sentimental Arse.",
+    "css": [],
+    "scripts": []
+  },
+  {
+    "path": "heatmap-of-all-arsenal-games.html",
+    "title": "Arsenal heatmap \u2014 article moved",
+    "description": "Arsenal heatmap \u2014 article moved on Sentimental Arse.",
+    "css": [],
+    "scripts": []
+  }
+]
