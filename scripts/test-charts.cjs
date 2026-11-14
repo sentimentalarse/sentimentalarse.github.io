@@ -52,7 +52,32 @@ async function open(file, failure) {
   assert.deepEqual(errors, [], file + ': unexpected runtime errors');
   return dom;
 }
+function testAnalyticsLoader() {
+  const code = fs.readFileSync(path.join(root, 'js/analytics.js'), 'utf8');
+  const endpoint = 'https://test-account.goatcounter.com/count';
+  for (const [url, configured, expected] of [
+    ['https://sentimentalarse.github.io/archives.html', endpoint, 1],
+    ['http://localhost:8000/', endpoint, 0],
+    ['https://localhost/', endpoint, 0],
+    ['https://preview.example.com/', endpoint, 0],
+    ['http://sentimentalarse.github.io/', endpoint, 0],
+    ['https://sentimentalarse.github.io/', '', 0]
+  ]) {
+    // External resources are disabled; inspect loading behavior without sending analytics.
+    const dom = new JSDOM('<script data-endpoint="' + configured + '" data-production-hosts="sentimentalarse.github.io">' + code + '</script>',
+      {url, runScripts: 'dangerously'});
+    const scripts = dom.window.document.querySelectorAll('script[src="https://gc.zgo.at/count.js"]');
+    assert.equal(scripts.length, expected, 'analytics host gating: ' + url);
+    if (expected) {
+      assert.equal(scripts[0].getAttribute('data-goatcounter'), endpoint);
+      assert.equal(scripts[0].async, true);
+    }
+    dom.window.close();
+  }
+  console.log('PASS analytics loads only when configured on production HTTPS hosts.');
+}
 (async () => {
+  testAnalyticsLoader();
   const cases = [
     ['heatmap-of-all-the-arsenal-league-games.html', 1, 'data/arsenal-results.csv'],
     ['points-per-game-in-top-european-football-leagues-2015-2016.html', 1, 'data/combined.csv'],

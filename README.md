@@ -110,6 +110,23 @@ For plain text, `--markdown --body-file article.txt` treats blank-line-separated
 
 The original Pelican source/configuration was not present. The new source fragments were extracted from its generated pages, retaining article text, dates, datasets, and URLs. Six incomplete prototype URLs now display archive notices and links to published charts; the original experiments remain in Git history. Missing legacy test-post and heatmap URLs have explanatory landing pages.
 
+## Page analytics (GoatCounter)
+
+Every page includes a shared GoatCounter loader. Configure your account in `site/analytics.json`:
+
+```json
+{
+  "goatcounter_url": "https://YOUR-SITE.goatcounter.com",
+  "production_hosts": ["sentimentalarse.github.io"]
+}
+```
+
+Create a hosted account at https://www.goatcounter.com/signup and use the site URL it assigns. This public URL is not a secret or API key. The loader uses GoatCounter's official HTTPS script and `/count` endpoint. Setup reference: https://www.goatcounter.com/help/start.
+
+This site is configured for `https://sentimentalarse.goatcounter.com/`. Add your custom domain to `production_hosts` if you use one. Only HTTPS pages on these exact hosts load the tracker; localhost, file previews, and other preview domains do not load it. No chart-interaction tracking is configured.
+
+After changing the settings, run `npm run build`, commit the config and regenerated HTML, and deploy. Open a live article and check its pageview in your GoatCounter dashboard. Ad blockers can prevent collection. To disable tracking, clear `goatcounter_url`, rebuild, and deploy again.
+
 ## Data and analysis
 
 See [dataset documentation](site/content/data/README.html) for sources, snapshot dates, definitions, and limitations. `data/arsenal-results.csv` replaces the extensionless `arsenal_result` file without changing its contents. Radar grouping uses position metadata and excludes goalkeepers from outfield charts; all source records are available in the data table.

@@ -8,7 +8,7 @@ import sys
 import tempfile
 import unittest
 
-from build import ROOT, build_site, render_pages
+from build import ROOT, analytics_script, build_site, render_pages
 from new_post import create_post
 
 
@@ -18,6 +18,7 @@ class NewPostTests(unittest.TestCase):
         self.addCleanup(self.temporary.cleanup)
         self.root = Path(self.temporary.name)
         shutil.copytree(ROOT / "site", self.root / "site")
+        self.post_count = sum(page.get("kind") == "post" for page in json.loads((self.root / "site/pages.json").read_text()))
 
     def files(self):
         return {p.relative_to(self.root).as_posix(): p.read_bytes()
@@ -39,7 +40,7 @@ class NewPostTests(unittest.TestCase):
             self.assertEqual(content.count('href="/' + name + '"'), 1)
             self.assertLess(content.index(name), content.index('visualizing-arsenal-players'))
             self.assertIn(listing, paths)
-        self.assertIn('(6)', (self.root / "authors.html").read_text())
+        self.assertIn(f'({self.post_count + 1})', (self.root / "authors.html").read_text())
         self.assertIn(name, (self.root / "sitemap.xml").read_text())
         for filename, expected in render_pages(self.root).items():
             self.assertEqual((self.root / filename).read_text(), expected)
@@ -153,6 +154,19 @@ class NewPostTests(unittest.TestCase):
         with self.assertRaises(KeyError):
             create_post(self.root, "Markdown failure", body="## Test", body_format="markdown")
         self.assertEqual(before, self.files())
+
+    def test_analytics_configuration_is_included_on_every_page(self):
+        config = self.root / "site/analytics.json"
+        settings = {"goatcounter_url": "https://test-account.goatcounter.com/", "production_hosts": ["sentimentalarse.github.io"]}
+        config.write_text(json.dumps(settings))
+        for name, output in render_pages(self.root).items():
+            if name.endswith(".html"):
+                self.assertEqual(output.count('src="/js/analytics.js"'), 1)
+                self.assertIn('data-endpoint="https://test-account.goatcounter.com/count"', output)
+        settings["goatcounter_url"] = "http://insecure.example"
+        config.write_text(json.dumps(settings))
+        with self.assertRaisesRegex(ValueError, "HTTPS"):
+            analytics_script(self.root)
 
     def test_failed_render_restores_manifest_and_removes_new_fragment(self):
         (self.root / "site/templates/layout.html").write_text('$undefined_placeholder')

@@ -1,9 +1,10 @@
 """Render HTML and Markdown articles through one shared layout."""
 from pathlib import Path
 from string import Template
-from urllib.parse import quote
+from urllib.parse import quote, urlsplit
 from html import escape
 import json
+import re
 import subprocess
 from datetime import date
 
@@ -44,6 +45,25 @@ def page_content(root, page):
     return body
 
 
+def analytics_script(root):
+    settings = json.loads((root / "site/analytics.json").read_text())
+    site_url = settings.get("goatcounter_url", "").strip()
+    endpoint = ""
+    if site_url:
+        url = urlsplit(site_url)
+        if (url.scheme != "https" or not url.hostname or url.username or url.password
+                or url.port or url.query or url.fragment or url.path not in ("", "/", "/count")):
+            raise ValueError("goatcounter_url must be an HTTPS GoatCounter site URL or /count endpoint.")
+        endpoint = f"https://{url.hostname}/count"
+    hosts = settings.get("production_hosts", [])
+    if (not isinstance(hosts, list) or not hosts
+            or any(not isinstance(host, str) or not re.fullmatch(r"[a-z0-9]+(?:[.-][a-z0-9]+)*", host) for host in hosts)):
+        raise ValueError("production_hosts must contain lowercase hostnames without protocols or paths.")
+    return ('<script defer src="/js/analytics.js" '
+            f'data-endpoint="{escape(endpoint, quote=True)}" '
+            f'data-production-hosts="{escape(",".join(hosts), quote=True)}"></script>')
+
+
 def render_pages(root=ROOT):
     layout = Template((root / "site/templates/layout.html").read_text())
     pages = json.loads((root / "site/pages.json").read_text())
@@ -58,6 +78,7 @@ def render_pages(root=ROOT):
         archive_list.append(f'<dt><time datetime="{published.isoformat()}">{published.strftime("%a %d %B %Y")}</time></dt>\n<dd>{link}</dd>')
     replacements = {"{{post_list}}": "\n".join(post_list), "{{archive_list}}": "\n".join(archive_list),
                     "{{post_count}}": str(len(posts))}
+    analytics = analytics_script(root)
     output = {}
     for page in pages:
         url = BASE_URL + "/" + quote(page["path"], safe="/")
@@ -72,7 +93,7 @@ def render_pages(root=ROOT):
             title=escape(page["title"]), description=escape(page["description"], quote=True),
             canonical=escape(url, quote=True), content=content,
             styles="\n".join(f'<link rel="stylesheet" href="/css/{name}.css">' for name in page["css"]),
-            scripts=scripts)
+            scripts=scripts, analytics=analytics)
     urls = "".join(f"<url><loc>{escape(BASE_URL + '/' + quote(p['path'], safe='/'))}</loc></url>" for p in pages)
     output["sitemap.xml"] = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + urls + '</urlset>\n'
     output["robots.txt"] = f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n"
