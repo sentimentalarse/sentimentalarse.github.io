@@ -8,7 +8,7 @@ Maybe this meant I would stop being stressed every weekend. I still get stressed
 
 --------------
 
-Anyway, eleven years have passed in a blink, since I last posted something here. So much has changed in between (I will come back to it later).  Then I start counting what happened in between, and eleven years feels about right.
+Anyway, eleven years have passed in a blink, since I last posted something here. So much has changed in between (I will come back to it later). I start recounting what happened in between, and eleven years feels about right.
 
 
 ## The genesis
