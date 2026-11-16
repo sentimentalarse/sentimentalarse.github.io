@@ -1,11 +1,13 @@
 ## The Comeback of Sentimental Arse
 
 
-Arsenal won the league after two decades! I woke up at 1 a.m. in Bali, jet-lagged, and discovered what the result of the [other match](https://www.premierleague.com/en/match/2562255/bournemouth-vs-manchester-city) meant for Arsenal. I couldn't scream so I checked if my spouse was awake. Same jet lag. She was. In a hushed voice, I broke the news to her. Her response was, "How?"
+Arsenal won the league after two decades! I woke up at 1 a.m. in Bali, jet-lagged, and discovered what the result of the [other match](https://www.premierleague.com/en/match/2562255/bournemouth-vs-manchester-city) meant for Arsenal. I couldn't scream so I checked if my spouse was awake. She was as we were battling the same jet lag. In a hushed voice (kids were unsurprisingly sleeping deeply), I broke the news to her. Her response was, "How?"
 
 Maybe this meant I would stop being stressed every weekend. I still get stressed, but now I am confident we'll find a way.
 
-Eleven years have passed in a blink. Then I start counting what happened in between, and eleven years feels about right.
+--------------
+
+Anyway, eleven years have passed in a blink, since I last posted something here. So much has changed in between (I will come back to it later).  Then I start counting what happened in between, and eleven years feels about right.
 
 
 ## The genesis
